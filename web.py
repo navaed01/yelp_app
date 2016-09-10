@@ -4,6 +4,7 @@
 
 from flask import Flask, render_template, request
 import geo_weather
+import os
 app = Flask(__name__)
 
 @app.route("/")

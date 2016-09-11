@@ -8,14 +8,14 @@
                  {% if businesses %} 
                   <h1>These are the top restaurants for {{place}}:</h1>
                 
-                    <div class="col-md-2"> <b>Name</b></div>
+                    <div class="col-md-4"> <b>Name</b></div>
                     <div class="col-md-2"> <b>Rating</b> </div>
-                    <div class="col-md-8"> <b>Phone Number</b> </div>
+                    <div class="col-md-6"> <b>Phone Number</b> </div>
                     
                         {%for businesses in businesses%} 
-                        <div class="col-md-2">{{businesses.name}}</div>
+                        <div class="col-md-4">{{businesses.name}}</div>
                         <div class="col-md-2">{{businesses.rating}}</div>
-                        <div class="col-md-8"> {{businesses.phone}}</div>
+                        <div class="col-md-6"> {{businesses.phone}}</div>
                         {% endfor %}  
 
               

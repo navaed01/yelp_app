@@ -5,18 +5,28 @@
     <body>
         <div class="jumbotron">
             <div class="container">
-                {% if forecast %}
-                    <h1>{{forecast}}</h1>
-                {% else %}
-                    <h1>where do you want the weather for?</h1>
+                 {% if businesses %} 
+                  <h1>These are the top restaurants for {{place}}:</h1>
+
+                  {%for businesses in businesses%} 
+            
+                   <h3> {{businesses.name}} {{businesses.rating}} {{businesses.phone}}</h3>
+                {% endfor %} 
+               
+
+              {% else %}
+                    <h1>where do you want food recommendations for?</h1>
                     <form action="/" class="form-inline">
                         <div class="form-group">
-                            <input type="text" name="address" placeholder="city, state" class="form-control">
+                            <input type="text" name="place" placeholder="city, state" class="form-control">
                         </div>
                         <input type="submit" value="Submit" class="btn btn-primary">
                     </form>
                 {% endif %}
-                <a href="{{ url_for('index') }}">Look up another address</a>
+
+
+
+                <a href="{{ url_for('index') }}">Look up another address</a> <br/>
                 <a href="{{ url_for('about') }}">About this project</a>
             </div>
         </div>
